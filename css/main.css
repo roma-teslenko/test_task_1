@@ -1,0 +1,404 @@
+/*____________________main_props_start____________________*/
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+.container_one{
+  width: 1170px;
+  margin: 0 auto;
+}
+.container_two{
+  width: 970px;
+  margin: 0 auto;
+}
+.container_three{
+  width: 770px;
+  margin: 0 auto;
+}
+/*____________________main_props_end____________________*/
+/*____________________navigation_start____________________*/
+#navi{
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 5;
+}
+.nav_wrap{
+  display: flex;
+}
+.logo{
+  height: 80px;
+  width: 70px;
+  margin-left: 55px;
+  margin-top: 12px;
+}
+.logo_text{
+  margin-left: 30px;
+  margin-top: 29px;
+  height: 80px;
+  width: 200px;
+}
+.logo_text a{
+  text-decoration: none;
+  font-family: "GothamProBold";
+  text-transform: uppercase;
+  color: #646464;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.logo_wrap{
+  display: flex;
+  flex: 1.2;
+}
+.menu{
+  margin-top: 35px;
+  flex: 0.99;
+  height: 70px;
+  width: 470px;
+  margin-right: 0;
+  padding: 0 0;
+}
+.menu ul a{
+  display: inline-block;
+  text-decoration: none;
+}
+.menu ul li{
+  font-size: 13px;
+  word-spacing: normal;
+  text-decoration: none;
+  font-family: "GothamProRegular";
+  text-transform: uppercase;
+  color: #646464;
+  letter-spacing: 1px;
+}
+.menu ul{
+  word-spacing: 20px;
+  list-style: none;
+}
+.menu ul a li:hover{
+  color: #545ad8;
+}
+/*____________________navigation_end____________________*/
+/*____________________full_slider_start____________________*/
+/* .overlay{
+  height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: rgba(0,0,0, 0.45);
+	top: 0;
+	left: 0;
+	z-index: 1;
+} */
+/* #full_slider{
+	width: 100%;
+	height: 570px; */
+	/* z-index: 0; */
+  /* position: relative; */
+}
+/*____________________css_slider_start____________________*/
+#slider { /*положение слайдера*/
+  position: relative;
+	text-align: center;
+  top: 10px;
+}
+
+#slider{ /*центровка слайдера*/
+	margin: 0 auto;
+}
+
+#slides article{ /*все изображения справа друг от доруга*/
+	width: 20%;
+	float: left;
+}
+
+#slides .image{ /*устанавливает общий размер блока с изображениями*/
+	width: 500%;
+	line-height: 0;
+}
+
+#overflow{ /*сркывает все, что находится за пределами этого блока*/
+	width: 100%;
+	overflow: hidden;
+}
+
+article img{ /*размер изображений слайдера*/
+	width: 100%;
+}
+
+#desktop:checked ~ #slider{ /*размер всего слайдера*/
+	max-width: 1200px; /*максимальнная длинна*/
+}
+
+/*настройка переключения и положения для левой стрелки*/
+/*если свич1-5 активны, то идет обращение к лейблу из блока с id контролс*/
+#switch1:checked ~ #controls label:nth-child(5),
+#switch2:checked ~ #controls label:nth-child(1),
+#switch3:checked ~ #controls label:nth-child(2){
+	background: url('../img/a2.png') no-repeat; /*заливка фона картинкой без повторений*/
+  background-position: center;
+  background-color: white;
+  float: left;
+	margin: 0 0 0 20px; /*сдвиг влево*/
+	display: block;
+	height: 68px;
+	width: 68px;
+  border: 2px #fff solid;
+  border-radius: 50px;
+  z-index: 100;
+}
+
+/*настройка переключения и положения для правой стрелки*/
+#switch1:checked ~ #controls label:nth-child(2),
+#switch2:checked ~ #controls label:nth-child(3),
+#switch3:checked ~ #controls label:nth-child(4){
+	background: url('../img/a1.png') no-repeat; /*заливка фона картинкой без повторений*/
+  background-position: center;
+  background-color: white;
+  float: right;
+	margin: 0 20px 0 0; /*сдвиг вправо*/
+	display: block;
+	height: 68px;
+	width: 68px;
+  border: 2px #fff solid;
+  border-radius: 50px;
+  z-index: 100;
+}
+
+label, a{ /*при наведении на стрелки или переключатели - курсор изменится*/
+	cursor: pointer;
+}
+
+.all input{ /*скрывает стандартные инпуты (чекбоксы) на странице*/
+	display: none;
+}
+
+/*позиция изображения при активации переключателя*/
+#switch1:checked ~ #slides .image{
+	margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image{
+	margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image{
+	margin-left: -200%;
+}
+
+#controls{ /*положение блока всех управляющих элементов*/
+	margin: -25% 0 0 0;
+	width: 100%;
+	height: 50px;
+}
+
+#active label{ /*стиль отдельного переключателя*/
+  border: 0.5px #bbb solid;
+	border-radius: 10px; /*скругление углов*/
+	display: inline-block; /*расположение в строку*/
+	width: 15px;
+	height: 15px;
+	background: #fff;
+}
+
+#active{ /*расположение блока с переключателями*/
+	margin: 15% 20px 0 0;
+	text-align: center;
+}
+
+#active label:hover{ /*поведение чекбокса при наведении*/
+	background: rgba(0,0,0, 0.45);
+	border-color: #646464 !important; /*выполнение в любом случае*/
+}
+
+/*цвет активного лейбла при активации чекбокса*/
+#switch1:checked ~ #active label:nth-child(1),
+#switch2:checked ~ #active label:nth-child(2),
+#switch3:checked ~ #active label:nth-child(3){
+	background: #646464;
+	border-color: #ffffff !important;
+}
+
+#slides .image{ /*анимация пролистывания изображений*/
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+#controls label:hover{ /*прозрачность стрелок при наведении*/
+	opacity: 0.6;
+}
+
+#controls label{ /*прозрачность стрелок при отводе курсора*/
+	transition: opacity 0.2s ease-out;
+}
+/*____________________css_slider_end____________________*/
+.full_slider_text_wrap{
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  margin-left: 340px;
+  position: absolute;
+}
+h1 {
+  font-family: "GothamProBold";
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 75px;
+  letter-spacing: 2px;
+  text-shadow: 2px 1px #000;
+}
+.full_head{
+
+}
+.full_text p{
+  text-align: center;
+  font-family: "GothamProRegular";
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 2px 1px #000;
+}
+.full_text{
+  height: 125px;
+  width: 430px;
+}
+.heding{
+  height: 60px;
+  width: 570px;
+}
+.full_butt{
+  height: 70px;
+  width: 200px;
+  margin-top: 40px;
+}
+.full_butt button{
+  font-family: "GothamProBlack";
+  font-size: 16px;
+  color: #fff;
+  display: block;
+  background-color: #646464;
+  width: 170px;
+  height: 50px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  outline: none;
+}
+/*____________________full_slider_end____________________*/
+/*____________________mini_slider_start____________________*/
+.mini_heading{
+  margin-top: 50px;
+  height: 100px;
+  width: 100%;
+}
+.mini_text{
+   /* display: block; */
+   padding-top: 10px;
+}
+.mini_text p{
+  font-family: "GothamProBold";
+  text-transform: uppercase;
+  text-align: center;
+  color: #646464;
+  font-size: 24px;
+  padding-top: 20px;
+}
+.mini_line{
+  position: absolute;
+  height: 2px;
+  width: 32px;
+  color: black;
+  margin-left: 400px;
+  margin-bottom: 300px;
+  z-index: 100;
+}
+/*____________________mini_slider_end____________________*/
+/*____________________columns_start____________________*/
+.columns_heading{
+  height: 100px;
+}
+.columns_text p{
+  font-family: "GothamProBold";
+  text-transform: uppercase;
+  text-align: center;
+  color: #646464;
+  font-size: 24px;
+  padding-top: 30px;
+}
+.row_one{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.row_two{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.col{
+  width: 300px;
+}
+.column_heading p{
+  font-family: "GothamProBold";
+  color: #646464;
+  font-size: 17px;
+}
+.column_text p{
+  font-family: "GothamProRegular";
+  color: #646464;
+  font-size: 14px;
+}
+/*____________________columns_end____________________*/
+/*____________________article_start____________________*/
+.article_heading{
+  height: 100px;
+}
+.article_text p{
+  font-family: "GothamProBold";
+  text-transform: uppercase;
+  text-align: center;
+  color: #646464;
+  font-size: 24px;
+  padding-top: 30px;
+}
+.article_one_heading h3{
+  font-family: "GothamProBold";
+  color: #646464;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+.article_two_heading h3{
+  font-family: "GothamProBold";
+  color: #646464;
+  text-transform: uppercase;
+  font-size: 17px;
+  margin-top: 40px;
+}
+.article_one_text p{
+  font-family: "GothamProRegular";
+  color: #646464;
+  font-size: 14px;
+  margin-bottom: -0.1em;
+}
+.bold_text{
+  color: #000;
+  font-family: "GothamProBold";
+}
+.article_two_row{
+  margin-top: 40px;
+}
+/*____________________article_end____________________*/
+/*____________________map_start____________________*/
+#map {
+  display: block;
+  margin: 100px auto;
+  width: 1200px;
+  height: 600px;
+  background-color: grey;
+}
+/*____________________map_end____________________*/
